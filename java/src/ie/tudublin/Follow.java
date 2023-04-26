@@ -1,6 +1,9 @@
 package ie.tudublin;
 
+import java.io.File;
 import java.util.ArrayList;
+
+import processing.data.TableRow;
 
 
 
@@ -9,11 +12,22 @@ public class Follow {
     private String word;
     private int count;
 
-    public Follow(){
+    @Override
+    public String toString(){
+        return "word = " + word + ", count = " + count;
+    }
 
-        while(word != null){
+    public Follow(DANI d){
 
-        }
+        this(
+            d.getWord(),
+            d.getFollow()
+        );
+    }
+
+    public Follow(String word, int count){
+        this.word = word;
+        this.count = count;
     }
 
     public String getWord(){
