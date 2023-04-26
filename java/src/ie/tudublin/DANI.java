@@ -1,3 +1,5 @@
+// pwd OOP-2023-Starter/java/src/ie/tudublin
+
 package ie.tudublin;
 
 import java.util.ArrayList;
@@ -17,7 +19,6 @@ public class DANI extends PApplet {
 	ArrayList<Word> word = new ArrayList<Word>();
 
 
-
 	public void loadFile(){
 
 		String line = "";
@@ -33,12 +34,13 @@ public class DANI extends PApplet {
         return null;
     }
 
-	public void findWord(String s){
-
-	}
-
-	public void findFollow(String s){
-
+	public boolean foundWord(String s){
+		for (Word w: word){
+			if (w.word == s){
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public void setup() {
@@ -55,7 +57,7 @@ public class DANI extends PApplet {
 
 	void loadModel(){
 
-		
+
 	}
 
 	public void keyPressed() {
@@ -71,6 +73,13 @@ public class DANI extends PApplet {
 		noStroke();
 		textSize(20);
         textAlign(CENTER, CENTER);
+
+		printModel();
+		loadModel();
+
+		float x = 500, y = 200;
+
+		text("HELLO!", x, y);
         
 	}
 
