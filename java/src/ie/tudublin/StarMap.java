@@ -11,7 +11,7 @@ import processing.data.*;
 public class StarMap extends PApplet {
 
     ArrayList<Star> stars = new ArrayList<Star>();
-    
+
     public float border;
 
     void drawGrid()

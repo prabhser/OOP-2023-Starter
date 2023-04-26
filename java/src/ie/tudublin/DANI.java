@@ -27,7 +27,8 @@ public class DANI extends PApplet {
 	public void loadFile(){
 
 		String[] file = loadStrings("small.txt");
-		for( String s:file){
+		for(String s:file){
+			System.out.println("s");
 			Word w = new Word(s);
 			word_array.add(w);
 		}

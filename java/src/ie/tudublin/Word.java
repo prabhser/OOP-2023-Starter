@@ -8,7 +8,7 @@ public class Word {
     ArrayList<Follow> follow_array = new ArrayList<Follow>();
     String word;
 
-    @Override
+    //@Override
     public String toString(){
         for(Follow f:follow_array)
             System.out.println("IN WORD: follow = " + f + ", word = " + word);
@@ -16,14 +16,12 @@ public class Word {
     }
 
     public Word(String w){
-        this(
-            w.getWord()
-        );
+
     }
 
     public Word(String w, Follow f){
         this.word = word;
-        //this.follow_array = follow_array;
+        this.follow_array = follow_array;
     }
 
 
@@ -33,6 +31,14 @@ public class Word {
 
     public void setWord(){
         this.word = word;
+    }
+
+    public ArrayList getFollowArray(){
+        return follow_array;
+    }
+
+    public void setFollowArray(){
+        this.follow_array = follow_array;
     }
 
     public boolean foundFollow(String s){
