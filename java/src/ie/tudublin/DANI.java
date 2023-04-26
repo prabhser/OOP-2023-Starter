@@ -21,6 +21,7 @@ public class DANI extends PApplet {
     String[] sonnet;
 	String[] file;
 	ArrayList<Word> word_array = new ArrayList<Word>();
+	ArrayList<Follow> follow_array = new ArrayList<Follow>();
 
 
 	public void loadFile(){
@@ -55,7 +56,7 @@ public class DANI extends PApplet {
 
 	void printModel(){
 		for (Word w: word_array){
-			System.out.println(w);
+			System.out.println(w, Follow);
 		}
 	}
 
@@ -83,11 +84,6 @@ public class DANI extends PApplet {
 		float x = 500, y = 200;
 
 		int i = 0;
-
-		for (Word w:word_array){
-			text(w.word, x, y + i);
-			i += 10;
-		}
 
         //text(sonnet[1], x, y);
 	}

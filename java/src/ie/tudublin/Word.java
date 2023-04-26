@@ -14,10 +14,10 @@ public class Word {
     }
 
     void Word(String word, int count){
-        for (Follow f:follow_array){
-            System.out.println(f);
-        }
+        
     }
+
+
 
     public boolean foundFollow(String s){
         for (Follow f: follow_array){
