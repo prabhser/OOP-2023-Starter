@@ -13,10 +13,10 @@ public class Word {
         return "IN WORD: follow = " + follow_array + ", word = " + word;
     }
 
-    public Word(String word){
-        this(
-            word.getWord()
-        );
+    public Word(String w){
+        // this(
+        //     w.getWord()
+        // );
     }
 
     public String getWord(){

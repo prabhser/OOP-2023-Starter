@@ -26,11 +26,10 @@ public class DANI extends PApplet {
 
 	public void loadFile(){
 
-		int i = 0;
-
-		String[] file = loadStrings("filename.txt");
+		String[] file = loadStrings("small.txt");
 		for( String s:file){
 			Word w = new Word(s);
+			word_array.add(w);
 		}
 
 
@@ -38,6 +37,7 @@ public class DANI extends PApplet {
 
     public String[] writeSonnet()
     {
+		loadFile();
         return null;
     }
 
@@ -67,7 +67,9 @@ public class DANI extends PApplet {
 	}
 
 	public void keyPressed() {
-
+		if (keyCode == ' '){
+			writeSonnet();
+		}
 	}
 
 	float off = 0;
@@ -94,4 +96,8 @@ public class DANI extends PApplet {
     public String getWord_array() {
         return null;
     }
+
+	public int getFollow() {
+		return 0;
+	}
 }
