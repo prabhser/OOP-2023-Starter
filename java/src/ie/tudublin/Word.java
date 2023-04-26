@@ -10,14 +10,22 @@ public class Word {
 
     @Override
     public String toString(){
-        return "IN WORD: follow = " + follow_array + ", word = " + word;
+        for(Follow f:follow_array)
+            System.out.println("IN WORD: follow = " + f + ", word = " + word);
+            return "done"; 
     }
 
     public Word(String w){
-        // this(
-        //     w.getWord()
-        // );
+        this(
+            w.getWord()
+        );
     }
+
+    public Word(String w, Follow f){
+        this.word = word;
+        //this.follow_array = follow_array;
+    }
+
 
     public String getWord(){
         return word;
