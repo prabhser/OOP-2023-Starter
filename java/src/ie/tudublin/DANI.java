@@ -2,6 +2,9 @@
 
 package ie.tudublin;
 
+import java.io.File;
+import java.io.Reader;
+import java.nio.file.ReadOnlyFileSystemException;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -16,17 +19,18 @@ public class DANI extends PApplet {
 	}
 
     String[] sonnet;
-	ArrayList<Word> word = new ArrayList<Word>();
+	String[] file;
+	ArrayList<Word> word_array = new ArrayList<Word>();
 
 
 	public void loadFile(){
 
 		String line = "";
 
-		loadStrings("small.txt"); // Load a text file into a String array
+		file = loadStrings("small.txt"); // Load a text file into a String array
 		split(line, ' '); // Split a string into an array of words
-		//w.replaceAll("[^\\w\\s]",""); // Remove punctuation characters
-		//s.toLowerCase() // Convert a string to lower case
+		//word_array.replaceAll("[^\\w\\s]",""); // Remove punctuation characters
+		//word_array.word.toLowerCase(); // Convert a string to lower case
 	}
 
     public String[] writeSonnet()
@@ -35,7 +39,7 @@ public class DANI extends PApplet {
     }
 
 	public boolean foundWord(String s){
-		for (Word w: word){
+		for (Word w: word_array){
 			if (w.word == s){
 				return true;
 			}
@@ -50,13 +54,12 @@ public class DANI extends PApplet {
 	}
 
 	void printModel(){
-		for (Word w: word){
+		for (Word w: word_array){
 			System.out.println(w);
 		}
 	}
 
 	void loadModel(){
-
 
 	}
 
@@ -79,11 +82,17 @@ public class DANI extends PApplet {
 
 		float x = 500, y = 200;
 
-		text("HELLO!", x, y);
-        
+		int i = 0;
+
+		for (Word w:word_array){
+			text(w.word, x, y + i);
+			i += 10;
+		}
+
+        //text(sonnet[1], x, y);
 	}
 
-    public String getWord() {
+    public String getWord_array() {
         return null;
     }
 

@@ -14,13 +14,13 @@ public class Follow {
 
     @Override
     public String toString(){
-        return "word = " + word + ", count = " + count;
+        return "IN FOLLOW: word = " + word + ", count = " + count;
     }
 
     public Follow(DANI d){
 
         this(
-            d.getWord(),
+            d.getWord_array(),
             d.getFollow()
         );
     }
