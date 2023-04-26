@@ -14,8 +14,9 @@ public class DANI extends PApplet {
 	}
 
     String[] sonnet;
+	ArrayList<Word> word = new ArrayList<Word>();
 
-	ArrayList<Word> w = new ArrayList<Word>();
+
 
 	public void loadFile(){
 
@@ -23,9 +24,6 @@ public class DANI extends PApplet {
 
 		loadStrings("small.txt"); // Load a text file into a String array
 		split(line, ' '); // Split a string into an array of words
-
-		//for (Word w  < )
-
 		//w.replaceAll("[^\\w\\s]",""); // Remove punctuation characters
 		//s.toLowerCase() // Convert a string to lower case
 	}
@@ -47,6 +45,17 @@ public class DANI extends PApplet {
 		colorMode(HSB);
 
        
+	}
+
+	void printModel(){
+		for (Word w: word){
+			System.out.println(w);
+		}
+	}
+
+	void loadModel(){
+
+		
 	}
 
 	public void keyPressed() {
