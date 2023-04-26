@@ -64,7 +64,9 @@ public class DANI extends PApplet {
 	}
 
 	void loadModel(){
-
+		for (Word w: word_array){
+			System.out.println(w);
+		}
 	}
 
 	public void keyPressed() {
