@@ -1,11 +1,34 @@
 package ie.tudublin;
 
+import java.util.ArrayList;
+
+
+
 public class Follow {
 
-    String word;
-    int count;
-    void Follow(String word, int count){
+    private String word;
+    private int count;
 
-        System.out.println(word + toString(count));
+    public Follow(){
+
+        while(word != null){
+
+        }
+    }
+
+    public String getWord(){
+        return word;
+    }
+
+    public void setWord(){
+        this.word = word;
+    }
+
+    public int getCount(){
+        return count;
+    }
+
+    public void setCount(){
+        this.count = count;
     }
 }
