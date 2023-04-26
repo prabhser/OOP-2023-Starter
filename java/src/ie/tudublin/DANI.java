@@ -8,6 +8,7 @@ import java.nio.file.ReadOnlyFileSystemException;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.data.TableRow;
 
 public class DANI extends PApplet {
 
@@ -19,19 +20,20 @@ public class DANI extends PApplet {
 	}
 
     String[] sonnet;
-	String[] file;
 	ArrayList<Word> word_array = new ArrayList<Word>();
 	ArrayList<Follow> follow_array = new ArrayList<Follow>();
 
 
 	public void loadFile(){
 
-		String line = "";
+		int i = 0;
 
-		file = loadStrings("small.txt"); // Load a text file into a String array
-		split(line, ' '); // Split a string into an array of words
-		//word_array.replaceAll("[^\\w\\s]",""); // Remove punctuation characters
-		//word_array.word.toLowerCase(); // Convert a string to lower case
+		String[] file = loadStrings("filename.txt");
+		for( String s:file){
+			Word w = new Word(s);
+		}
+
+
 	}
 
     public String[] writeSonnet()
@@ -56,7 +58,7 @@ public class DANI extends PApplet {
 
 	void printModel(){
 		for (Word w: word_array){
-			System.out.println(w, Follow);
+			System.out.println(w);
 		}
 	}
 
@@ -78,6 +80,7 @@ public class DANI extends PApplet {
 		textSize(20);
         textAlign(CENTER, CENTER);
 
+		loadFile();
 		printModel();
 		loadModel();
 
@@ -90,9 +93,5 @@ public class DANI extends PApplet {
 
     public String getWord_array() {
         return null;
-    }
-
-    public int getFollow() {
-        return 0;
     }
 }

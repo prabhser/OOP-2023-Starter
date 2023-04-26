@@ -13,11 +13,19 @@ public class Word {
         return "IN WORD: follow = " + follow_array + ", word = " + word;
     }
 
-    void Word(String word, int count){
-        
+    public Word(String word){
+        this(
+            word.getWord()
+        );
     }
 
+    public String getWord(){
+        return word;
+    }
 
+    public void setWord(){
+        this.word = word;
+    }
 
     public boolean foundFollow(String s){
         for (Follow f: follow_array){
